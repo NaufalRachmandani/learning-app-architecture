@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Movie Catalogue</string>
+    <string name="score">Score : %.1f</string>
+    <string name="_10">10</string>
+    <string name="name">Name 123456789101112131415161718192021</string>
+    <string name="movie">Movie</string>
+    <string name="tv_show">TV Show</string>
+    <string name="language">Language : %s</string>
+    <string name="episodes">Episodes : %d</string>
+    <string name="status">Status : %s</string>
+    <string name="popularity">Popularity : %.4f</string>
+    <string name="synopsis">Synopsis : \n%s</string>
+    <string name="logo">Logo</string>
+    <string name="banner">banner</string>
+    <string name="poster">poster</string>
+    <string name="image_button_toolbar">image button toolbar</string>
+    <string name="try_again">Try Again</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="favorite_title">Favorite Movies and Tv Show</string>
+</resources>

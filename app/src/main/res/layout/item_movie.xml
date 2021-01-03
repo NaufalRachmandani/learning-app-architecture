@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_movie"
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_baseline_movie_filter_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/poster"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_name"
+        style="@style/textStyle"
+        android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_movie"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/name"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_score"
+        style="@style/textStyle"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_movie"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_language"
+        style="@style/textStyle"
+        android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/language"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_movie"
+        app:layout_constraintTop_toBottomOf="@id/tv_score"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
