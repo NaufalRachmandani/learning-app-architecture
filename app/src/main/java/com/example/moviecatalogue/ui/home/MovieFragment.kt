@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviecatalogue.adapter.MovieAdapter
@@ -18,7 +17,7 @@ import com.example.moviecatalogue.ui.detail.DetailMovieActivity
 import com.example.moviecatalogue.valueobject.Status
 import com.example.moviecatalogue.viewmodel.FavoriteViewModel
 import com.example.moviecatalogue.viewmodel.HomeViewModel
-import com.example.moviecatalogue.viewmodel.ViewModelFactory
+import org.koin.android.viewmodel.ext.android.viewModel
 import splitties.fragments.start
 
 class MovieFragment : Fragment(), OnMovieClickListener {
@@ -39,16 +38,8 @@ class MovieFragment : Fragment(), OnMovieClickListener {
     }
 
     private lateinit var movieBinding: FragmentMovieBinding
-    private val homeViewModel: HomeViewModel by viewModels(factoryProducer = {
-        ViewModelFactory.getInstance(
-            requireActivity()
-        )
-    })
-    private val favoriteViewModel: FavoriteViewModel by viewModels(factoryProducer = {
-        ViewModelFactory.getInstance(
-            requireActivity()
-        )
-    })
+    private val homeViewModel by viewModel<HomeViewModel>()
+    private val favoriteViewModel by viewModel<FavoriteViewModel>()
     private var index: Int = 0
     private var isFromFav: Boolean = false
 

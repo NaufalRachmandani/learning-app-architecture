@@ -17,6 +17,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "API_KEY", '"86bb65de1345ed0d39c7f97d5c18b7d8"')
     }
 
     buildTypes {
@@ -85,4 +86,13 @@ dependencies {
     //room
     implementation "androidx.room:room-runtime:2.2.6"
     kapt "androidx.room:room-compiler:2.2.6"
+
+    // Koin for Android
+    implementation "org.koin:koin-android:2.2.0"
+    // or Koin for Lifecycle scoping
+    implementation "org.koin:koin-android-scope:2.2.0"
+    // or Koin for Android Architecture ViewModel
+    implementation "org.koin:koin-android-viewmodel:2.2.0"
+    // or Koin for Android Fragment Factory (unstable version)
+    implementation "org.koin:koin-androidx-fragment:2.2.0"
 }

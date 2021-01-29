@@ -2,7 +2,6 @@ package com.example.moviecatalogue.ui.detail
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.example.moviecatalogue.R
@@ -11,9 +10,9 @@ import com.example.moviecatalogue.data.source.remote.movie.MovieItem
 import com.example.moviecatalogue.data.source.remote.tv.DetailTvResponse
 import com.example.moviecatalogue.data.source.remote.tv.TvItem
 import com.example.moviecatalogue.databinding.ActivityDetailMovieBinding
-import com.example.moviecatalogue.viewmodel.DetailMovieViewModel
-import com.example.moviecatalogue.viewmodel.ViewModelFactory
 import com.example.moviecatalogue.valueobject.Status
+import com.example.moviecatalogue.viewmodel.DetailMovieViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailMovieActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -25,11 +24,7 @@ class DetailMovieActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private lateinit var activityDetailMovieBinding: ActivityDetailMovieBinding
-    private val detailMovieViewModel: DetailMovieViewModel by viewModels(factoryProducer = {
-        ViewModelFactory.getInstance(
-            this
-        )
-    })
+    private val detailMovieViewModel by viewModel<DetailMovieViewModel>()
 
     private var type = 0
     private var state = false
@@ -70,7 +65,7 @@ class DetailMovieActivity : AppCompatActivity(), View.OnClickListener {
                                 //nothing to do because api response just using success
                             }
                         }
-                        state = movie.body?.favorite?: false
+                        state = movie.body?.favorite ?: false
                         stateFavorite(state)
                     }
                 })
@@ -94,7 +89,7 @@ class DetailMovieActivity : AppCompatActivity(), View.OnClickListener {
                                 //nothing to do because api response just using success
                             }
                         }
-                        state = tv.body?.favorite?: false
+                        state = tv.body?.favorite ?: false
                         stateFavorite(state)
                     }
                 })

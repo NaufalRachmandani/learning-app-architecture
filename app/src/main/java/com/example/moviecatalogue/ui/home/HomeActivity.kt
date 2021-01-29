@@ -12,18 +12,14 @@ import com.example.moviecatalogue.ui.detail.DetailMovieActivity
 import com.example.moviecatalogue.ui.favorite.FavoriteActivity
 import com.example.moviecatalogue.valueobject.Status
 import com.example.moviecatalogue.viewmodel.HomeViewModel
-import com.example.moviecatalogue.viewmodel.ViewModelFactory
 import com.opensooq.pluto.listeners.OnItemClickListener
+import org.koin.android.viewmodel.ext.android.viewModel
 import splitties.activities.start
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var activityHomeBinding: ActivityHomeBinding
-    private val homeViewModel: HomeViewModel by viewModels(factoryProducer = {
-        ViewModelFactory.getInstance(
-            this
-        )
-    })
+    private val homeViewModel by viewModel<HomeViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
